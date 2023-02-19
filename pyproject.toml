@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "template-python"
+description = "Project template for python."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT License"}
+keywords = ["template", "python", "project", "src-layout"]
+authors = [
+    { name = "Yuya Honda", email = "yuyahnd.info@gmail.com" }
+]
+maintainers = [
+    { name = "Yuya Honda", email = "yuyahnd.info@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = []
+
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.2.1",
+    "tox==4.4.4",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yuyahnd/template-python"
+"Bug Tracker" = "https://github.com/yuyahnd/template-python/issues"
+"Repository" = "https://github.com/yuyahnd/template-python.git"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "packages.__version__"}
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
